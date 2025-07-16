@@ -1,6 +1,6 @@
-# Matter Linux Light-switch Example
+# Matter Linux Light-switch-app Example
 
-This example demonstrates the Matter Light-switch application on Linux platforms.
+This example demonstrates the Matter Light-switch-app application on Linux platforms.
 
 ## Building
 
@@ -10,7 +10,7 @@ This example demonstrates the Matter Light-switch application on Linux platforms
 
 -   Build the example application:
 
-          $ cd ~/connectedhomeip/examples/lighting-app/linux
+          $ cd ~/connectedhomeip/examples/light-switch-app/linux
           $ git submodule update --init
           $ source third_party/connectedhomeip/scripts/activate.sh
           $ gn gen out/debug --args="chip_build_libshell = true"
@@ -19,12 +19,12 @@ This example demonstrates the Matter Light-switch application on Linux platforms
 ## Testing the example
 
 -   After successful commissioning, use the chip-tool to write the ACL in
-    Lighting device to allow access from Lighting-switch device and chip-tool.
+    Lighting device to allow access from Light-switch-app device and chip-tool.
 
         $ ./out/debug/chip-tool accesscontrol write acl '[{"fabricIndex": 1, "privilege": 5, "authMode": 2, "subjects": [112233], "targets": null },{"fabricIndex": 1, "privilege": 3, "authMode": 2, "subjects": [<LIGHT SWITCH NODE ID>], "targets": null }]' <LIGHTING APP NODE ID> 0
 
 -   After successful commissioning, use the chip-tool for binding in
-    Lighting-switch.
+    Light-switch-app.
 
         $ ./out/debug/chip-tool binding write binding '[{"fabricIndex": 1, "node":<LIGHTING APP NODE ID>, "endpoint":1, "cluster":6}]' <LIGHT SWITCH NODE ID> 1
 
